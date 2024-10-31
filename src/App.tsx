@@ -1,7 +1,17 @@
+import Topbar from "./scenes/global/Topbar"
+import { ColorModeContext, useMode } from "./theme"
+import { CssBaseline, ThemeProvider } from "@mui/material"
+
 export default function App() {
+  const [ theme, colorMode ] = useMode()
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600">Hello, Tailwind with Vite!</h1>
-    </div>
-  );
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <main>
+          <Topbar />
+        </main>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+  )
 }
