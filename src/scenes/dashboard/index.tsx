@@ -1,6 +1,10 @@
+import Header from "../../components/Header";
+import { Box } from "@mui/material";
 
-export default function index() {
+export default function Dashboard() {
     return (
-        <div>index</div>
+        <Box>
+            <Header title="Dashboard" subTitle="Welcome to your dashboard" />
+        </Box>
     )
 }
