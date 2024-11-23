@@ -1,6 +1,15 @@
 import { tokens } from "../theme";
 
-export const mockDataTeam = [
+export interface TeamMember {
+    id: number;
+    name: string;
+    age: number;
+    phone: string;
+    email: string;
+    access: "admin" | "manager" | "user";
+}
+
+export const mockDataTeam: TeamMember[] = [
     {
         id: 1,
         name: "Jon Snow",

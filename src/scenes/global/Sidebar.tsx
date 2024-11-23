@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { Box, IconButton, Typography, useTheme } from "@mui/material"
 import { Link } from "react-router-dom"
@@ -15,6 +15,7 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 interface itemProps {
     title: string,
@@ -27,9 +28,10 @@ interface itemProps {
 const Item = ({ title, to, icon, selected, setSelected }: itemProps) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+
     return (
         <MenuItem
-            active={selected === title}
+            className={`${selected === title && "text-[#6870fa]"}`}
             style={{
             color: colors.grey[100],
             }}
@@ -47,6 +49,12 @@ export default function SidebarSection() {
     const colors = tokens(theme.palette.mode);
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [selected, setSelected] = useState("Dashboard");
+    const matches = useMediaQuery('(min-width:1280px)');
+
+    useEffect(()=>{
+        if(matches) setIsCollapsed(false)
+        else if(!matches) setIsCollapsed(true)
+    },[matches])
 
     return (
         <Box sx={{
@@ -60,9 +68,6 @@ export default function SidebarSection() {
             "& .ps-menu-button:hover": {
                 color: "#868dfb !important",
                 backgroundColor: `transparent !important`
-            },
-            "& .ps-menu-button.active": {
-                color: "#6870fa !important",
             },
         }}>
             <Sidebar collapsed={isCollapsed}>
