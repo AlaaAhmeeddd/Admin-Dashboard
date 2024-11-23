@@ -208,7 +208,16 @@ export const mockDataTeam: TeamMember[] = [
     },
     ];
 
-    export const mockDataInvoices = [
+    export interface dataInvoicesType {
+        id: number;
+        name: string;
+        phone: string;
+        email: string;
+        cost: string;
+        date: string;
+    }
+
+    export const mockDataInvoices: dataInvoicesType[] = [
     {
         id: 1,
         name: "Jon Snow",

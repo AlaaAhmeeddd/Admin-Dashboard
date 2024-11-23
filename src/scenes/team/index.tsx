@@ -83,7 +83,7 @@ function Team() {
                     overflowX: "auto",
                     "& .MuiDataGrid-root": {
                         border: "none",
-                        minWidth: "1000px",
+                        minWidth: "950px",
                     },
                     "& .MuiDataGrid-cell": {
                         borderBottom: "none",
