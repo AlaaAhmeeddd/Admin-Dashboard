@@ -8,7 +8,7 @@ function index() {
     <Container>
       <Box className="overflow-x-hidden">
         <Header title="Bar Chart" subTitle="Simple Bar Chart" />
-        <Box className="overflow-x-scroll">
+        <Box className="overflow-x-auto">
           <Box className="min-w-[500px]" height="75vh" >
             <BarChart />
           </Box>
