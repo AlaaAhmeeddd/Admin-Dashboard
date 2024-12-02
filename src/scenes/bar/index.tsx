@@ -1,6 +1,21 @@
+import { Box } from "@mui/material"
+import BarChart from "../../components/BarChart"
+import Container from "../../components/Container"
+import Header from "../../components/Header"
 
-export default function Bar() {
+function index() {
   return (
-    <div>index</div>
+    <Container>
+      <Box className="overflow-x-hidden">
+        <Header title="Bar Chart" subTitle="Simple Bar Chart" />
+        <Box className="overflow-x-scroll">
+          <Box className="min-w-[500px]" height="75vh" >
+            <BarChart />
+          </Box>
+        </Box>
+      </Box>
+    </Container>
   )
 }
+
+export default index
