@@ -16,7 +16,7 @@ import Geography from "./scenes/geography/index.tsx"
 import Calendar from "./scenes/calendar/index.tsx"
 
 export default function App() {
-    const [theme, colorMode] = useMode();
+    const [theme, colorMode] = useMode();    
 
     return (
         <ColorModeContext.Provider value={colorMode}>
